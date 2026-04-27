@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(xargs ls *)",
+      "Bash(venv/bin/python *)",
+      "Bash(venv/bin/uvicorn app.main:app --port 8001)",
+      "Bash(curl -s http://localhost:8001/verbs/)",
+      "Bash(curl -s http://localhost:8001/moods/)",
+      "Bash(curl -s http://localhost:8001/tenses/)"
+    ]
+  }
+}
