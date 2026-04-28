@@ -8,7 +8,11 @@
       "Bash(venv/bin/uvicorn app.main:app --port 8001)",
       "Bash(curl -s http://localhost:8001/verbs/)",
       "Bash(curl -s http://localhost:8001/moods/)",
-      "Bash(curl -s http://localhost:8001/tenses/)"
+      "Bash(curl -s http://localhost:8001/tenses/)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Read(//c/Users/mclifford/AppData/Local/Programs/Python//**)",
+      "Bash(ls /c/Python*)"
     ]
   }
 }
