@@ -13,7 +13,11 @@
       "Bash(pip3 install:*)",
       "Read(//c/Users/mclifford/AppData/Local/Programs/Python//**)",
       "Bash(ls /c/Python*)",
-      "Bash(venv/bin/python3 *)"
+      "Bash(venv/bin/python3 *)",
+      "Bash(xargs cat -n)",
+      "Bash(uvicorn app.main:app --port 8001)",
+      "Bash(./venv/bin/uvicorn app.main:app --port 8001)",
+      "Bash(kill %1)"
     ]
   }
 }

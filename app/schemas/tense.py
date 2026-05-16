@@ -5,6 +5,7 @@ class TenseOut(BaseModel):
     id: int
     name: str
     mood_id: int
+    mood_name: str
 
     model_config = {"from_attributes": True}
 
