@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Current Feature
+Information relevant to the current feature that is being worked on can be found in @context/current-feature.md
+
 ## Development Commands
 
 ```bash

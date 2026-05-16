@@ -1,8 +1,9 @@
 from app.db.session import SessionLocal
+from app.models.conjugation import Conjugation
 from app.models.mood import Mood
+from app.models.pronoun import Pronoun
 from app.models.tense import Tense
 from app.models.verb import Verb
-from app.models.conjugation import Conjugation
 
 COMMON_VERBS = [
     "ser", "estar", "haber", "tener", "hacer",
@@ -62,6 +63,7 @@ MOODS_AND_TENSES = [
 ]
 
 PERSONS = ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos"]
+PRONOUNS = PERSONS
 
 CONJUGATION_DATA = {
     "ser": {
@@ -187,6 +189,15 @@ CONJUGATION_DATA = {
 }
 
 
+def seed_pronouns(db) -> None:
+    if db.query(Pronoun).count() > 0:
+        print("Pronouns already seeded.")
+        return
+    db.add_all([Pronoun(pronoun=p) for p in PRONOUNS])
+    db.commit()
+    print(f"Seeded {len(PRONOUNS)} pronouns.")
+
+
 def seed_verbs(db) -> None:
     if db.query(Verb).count() > 0:
         print("Verbs already seeded.")
@@ -256,15 +267,17 @@ def seed_conjugations(db) -> None:
 if __name__ == "__main__":
     from app.db.base import Base
     from app.db.session import engine
+    import app.models.conjugation # noqa: F401
     import app.models.mood        # noqa: F401
+    import app.models.pronoun     # noqa: F401
     import app.models.tense       # noqa: F401
     import app.models.verb        # noqa: F401
-    import app.models.conjugation # noqa: F401
 
     Base.metadata.create_all(bind=engine)
 
     db = SessionLocal()
     try:
+        seed_pronouns(db)
         seed_verbs(db)
         seed_moods_and_tenses(db)
         seed_conjugations(db)

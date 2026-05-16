@@ -12,7 +12,8 @@
       "Bash(pip install:*)",
       "Bash(pip3 install:*)",
       "Read(//c/Users/mclifford/AppData/Local/Programs/Python//**)",
-      "Bash(ls /c/Python*)"
+      "Bash(ls /c/Python*)",
+      "Bash(venv/bin/python3 *)"
     ]
   }
 }
